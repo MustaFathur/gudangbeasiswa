@@ -62,55 +62,53 @@
     @include('admin.sidebar')
     <!-- partial -->
     @include('admin.navbar')
+
     <!-- partial -->
     <div class="container-fluid page-body-wrapper mt-4">
+                @if (session()->has('message'))
+                    <div class="alert alert-success">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert">x</button>
+                        {{ session()->get('message') }}
+                    </div>
+                @endif
+                <h1>Tambah Beasiswa</h1>
+                <form class="crud" action="{{ url('upload_beasiswa') }}" method="POST" enctype="multipart/form-data">
 
+                    @csrf
 
-        <di class="container" align="center" style="padding-top:100px;">
-            @if (session()->has('message'))
-                <div class="alert alert-success">
-                    <button type="button" class="btn-close" data-bs-dismiss="alert">x</button>
-                    {{ session()->get('message') }}
-                </div>
-            @endif
-            <h1>Tambah Beasiswa</h1>
-            <form class="crud" action="{{ url('upload_beasiswa') }}" method="POST" enctype="multipart/form-data">
-
-                @csrf
-
-                <div class="form-group">
-                    <label for="nama-beasiswa">Nama Beasiswa</label>
-                    <input type="text" id="nama-beasiswa" name="name" placeholder="Tuliskan Nama Beasiswa"
-                        required="">
-                </div>
-                <div class="form-group">
-                    <label for="nama-lembaga">Nama Lembaga</label>
-                    <input type="text" id="nama-lembaga" name="lembaga"
-                        placeholder="Tuliskan Nama Lembaga Penyedia Beasiswa" required="">
-                </div>
-                <div class="form-group">
-                    <label for="kategori">Kategori Beasiswa</label>
-                    <select id="kategori" name="kategori" style="color: black" required="">
-                        <option>--Pilih--</option>
-                        <option value="diploma">Diploma</option>
-                        <option value="sarjana">Sarjana</option>
-                        <option value="magister">Magister</option>
-                        <option value="doktor">Doktor</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="deskripsi">Deskripsi</label>
-                    <input type="text" id="deskripsi" name="deskripsi" placeholder="Tuliskan Deskripsi Beasiswa"
-                        required="">
-                </div>
-                <div class="form-group">
-                    <label for="gambar">Gambar</label>
-                    <input type="file" id="gambar" name="file" required="">
-                </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-success" value="Tambahkan">
-                </div>
-            </form>
+                    <div class="form-group">
+                        <label for="nama-beasiswa">Nama Beasiswa</label>
+                        <input type="text" id="nama-beasiswa" name="name" placeholder="Tuliskan Nama Beasiswa"
+                            required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="nama-lembaga">Nama Lembaga</label>
+                        <input type="text" id="nama-lembaga" name="lembaga"
+                            placeholder="Tuliskan Nama Lembaga Penyedia Beasiswa" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="kategori">Kategori Beasiswa</label>
+                        <select id="kategori" name="kategori" style="color: black" required="">
+                            <option>--Pilih--</option>
+                            <option value="diploma">Diploma</option>
+                            <option value="sarjana">Sarjana</option>
+                            <option value="magister">Magister</option>
+                            <option value="doktor">Doktor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="deskripsi">Deskripsi</label>
+                        <input type="text" id="deskripsi" name="deskripsi" placeholder="Tuliskan Deskripsi Beasiswa"
+                            required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="gambar">Gambar</label>
+                        <input type="file" id="gambar" name="file" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-success" value="Tambahkan">
+                    </div>
+                </form>
     </div>
     </div>
     <!-- container-scroller -->

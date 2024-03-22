@@ -35,3 +35,7 @@ Route::middleware([
 
 Route::get('/tambah_beasiswa_view', [AdminController::class, 'tambah']);
 Route::post('/upload_beasiswa', [AdminController::class, 'upload']);
+Route::get('/tampilkanbeasiswa', [AdminController::class, 'tampilkanbeasiswa']);
+Route::get('/hapusbeasiswa/{id}', [AdminController::class, 'hapusbeasiswa']);
+Route::get('/updatebeasiswa/{id}', [AdminController::class, 'updatebeasiswa']);
+Route::post('/editbeasiswa/{id}', [AdminController::class, 'editbeasiswa']);

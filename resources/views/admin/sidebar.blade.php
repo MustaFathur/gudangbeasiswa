@@ -37,8 +37,8 @@
                             <span class="count bg-success"></span>
                         </div>
                         <div class="profile-name">
-                            <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
-                            <span>Gold Member</span>
+                            <h5 class="mb-0 font-weight-normal">Admin</h5>
+                            <span>Gudang Mahasiswa</span>
                         </div>
                     </div>
                     <a href="#" id="profile-dropdown" data-bs-toggle="dropdown"><i
@@ -89,6 +89,14 @@
                         <i class="mdi mdi-file-document-box"></i>
                     </span>
                     <span class="menu-title">Tambahkan Beasiswa</span>
+                </a>
+            </li>
+            <li class="nav-item menu-items">
+                <a class="nav-link" href="{{ url('tampilkanbeasiswa') }}">
+                    <span class="menu-icon">
+                        <i class="mdi mdi-file-document-box"></i>
+                    </span>
+                    <span class="menu-title">List Beasiswa</span>
                 </a>
             </li>
         </ul>
