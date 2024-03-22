@@ -20,6 +20,8 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/home', [HomeController::class, 'redirect']);
 
+Route::get('/about', [HomeController::class, 'about']);
+
 
 Route::middleware([
     'auth:sanctum',
@@ -31,4 +33,5 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/tambahkan_beasiswa_view', [AdminController::class, 'tambah']);
+Route::get('/tambah_beasiswa_view', [AdminController::class, 'tambah']);
+Route::post('/upload_beasiswa', [AdminController::class, 'upload']);
